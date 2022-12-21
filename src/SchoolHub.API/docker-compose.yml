@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+    mysql:
+        image: mysql:latest
+        container_name: schoolhubDB
+        command: mysqld
+        environment:
+            MYSQL_USER: user
+            MYSQL_PASSWORD: user
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: default_schema
+        volumes:
+            - ./src/db/db.sql:/docker-entrypoint-initdb.d/1.sql
+
+        ports:
+            - 3306:3306
