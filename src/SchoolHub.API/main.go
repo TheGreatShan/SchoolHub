@@ -1,10 +1,15 @@
 package main
 
 import (
-	"SchoolHubAPI/src/models"
-	"fmt"
+    "SchoolHubAPI/src/controllers"
+    "SchoolHubAPI/src/db"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("test")
+	r := gin.Default()
+
+	db.ConnectDatabase()
+    r.GET("/roles", controllers.FindRoles)
+    r.Run()
 }
