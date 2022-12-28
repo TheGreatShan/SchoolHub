@@ -12,5 +12,6 @@ func main() {
 	db.ConnectDatabase()
 	r.GET("/roles", controllers.FindRoles)
 	r.POST("/signup", controllers.SignUp)
+	r.POST("/login", controllers.Login)
 	r.Run()
 }

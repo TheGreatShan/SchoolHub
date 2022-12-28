@@ -3,3 +3,4 @@
 /src/schoolhub.app/node_modules
 /src/SchoolHub.API/.idea
 /src/SchoolHub.API/.fleet
+/src/SchoolHub.API/.env
