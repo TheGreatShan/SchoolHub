@@ -15,15 +15,15 @@ CREATE TABLE User
     id       varchar(255) PRIMARY KEY NOT NULL UNIQUE,
     username varchar(30) unique       not null,
     password varchar(255)             NOT NULL,
-    email    VARCHAR(50)              NOT NULL,
-    roleId   varchar(255)             NOT NULL REFERENCES Role (id)
+    email    VARCHAR(50)              NOT NULL UNIQUE ,
+    role_id   varchar(255)             NOT NULL REFERENCES Role (id)
 );
 
 CREATE TABLE Type
 (
     id     varchar(255) PRIMARY KEY NOT NULL UNIQUE,
     type   varchar(20)              NOT NULL UNIQUE,
-    userId varchar(255)             NOT NULL REFERENCES User (id)
+    user_id varchar(255)             NOT NULL REFERENCES User (id)
 );
 
 CREATE TABLE Appointment
@@ -33,15 +33,15 @@ CREATE TABLE Appointment
     description varchar(255) NULL,
     startDate   date                     NOT NULL,
     endDate     date                     NOT NULL,
-    typeId      varchar(255)             NOT NULL REFERENCES Type (id),
-    userId      varchar(255)             NOT NULL REFERENCES User (id)
+    type_id      varchar(255)             NOT NULL REFERENCES Type (id),
+    user_id      varchar(255)             NOT NULL REFERENCES User (id)
 );
 
 CREATE TABLE Subject
 (
     id      varchar(255) PRIMARY KEY NOT NULL UNIQUE,
     subject varchar(20)              NOT NULL UNIQUE,
-    userId  varchar(255)             NOT NULL REFERENCES User (id)
+    user_id  varchar(255)             NOT NULL REFERENCES User (id)
 );
 
 CREATE TABLE Grade
@@ -50,8 +50,8 @@ CREATE TABLE Grade
     grade     float                    NOT NULL,
     date      date                     NOT NULL,
     semester  int                      NOT NULL,
-    userId    varchar(255)             NOT NULL REFERENCES User (id),
-    subjectId varchar(255)             NOT NULL REFERENCES Subject (id)
+    user_id    varchar(255)             NOT NULL REFERENCES User (id),
+    subject_id varchar(255)             NOT NULL REFERENCES Subject (id)
 );
 
 CREATE TABLE Homework
@@ -60,8 +60,8 @@ CREATE TABLE Homework
     homework  varchar(30)              NOT NULL,
     dueDate   date                     NOT NULL,
     isDone    boolean                  NOT NULL,
-    subjectId varchar(255)             NOT NULL REFERENCES Subject (id),
-    userId    varchar(255)             NOT NULL REFERENCES User (id)
+    subject_id varchar(255)             NOT NULL REFERENCES Subject (id),
+    user_id    varchar(255)             NOT NULL REFERENCES User (id)
 );
 
 CREATE TABLE Note
@@ -69,6 +69,6 @@ CREATE TABLE Note
     id         varchar(255) PRIMARY KEY NOT NULL UNIQUE,
     note       text                     NOT NULL,
     date       date NULL,
-    userId     varchar(255)             NOT NULL REFERENCES User (id),
-    homeworkId varchar(255)             NOT NULL REFERENCES Homework (id)
+    user_id     varchar(255)             NOT NULL REFERENCES User (id),
+    homework_id varchar(255)             NOT NULL REFERENCES Homework (id)
 );
