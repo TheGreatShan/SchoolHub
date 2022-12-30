@@ -1,7 +1,7 @@
 package db
 
 import (
-    "SchoolHubAPI/src/models"
+    "SchoolHubAPI/models"
     "gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

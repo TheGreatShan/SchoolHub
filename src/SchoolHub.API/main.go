@@ -1,8 +1,8 @@
 package main
 
 import (
-	"SchoolHubAPI/src/controllers"
-	"SchoolHubAPI/src/db"
+	"SchoolHubAPI/controllers"
+	"SchoolHubAPI/db"
 	"github.com/gin-gonic/gin"
 )
 
