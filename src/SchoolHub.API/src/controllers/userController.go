@@ -68,12 +68,12 @@ func Login(c *gin.Context) {
 		"sub": user.Id,
 		"exp": time.Now().Add(time.Hour * 24 * 30).Unix(),
 	})
-
+    
     tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Cannot to create token"})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"token": tokenString})
+	c.JSON(http.StatusOK, gin.H{"token": tokenString, "user" : user})
 }
