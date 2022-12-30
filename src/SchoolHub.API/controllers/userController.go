@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"SchoolHubAPI/src/db"
-	"SchoolHubAPI/src/models"
+	"SchoolHubAPI/db"
+	"SchoolHubAPI/models"
     "github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
