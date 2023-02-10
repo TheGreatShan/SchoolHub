@@ -1,7 +1,7 @@
 name: SchoolHub
 services:
   database:
-    build: ./SchoolHub.DB
+    image: mysql:latest
     ports:
       - 3306:3306
     environment:
@@ -9,7 +9,7 @@ services:
       MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./src/db/db.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./SchoolHub.DB/db.sql:/docker-entrypoint-initdb.d/1.sql
 
   backend:
     build: ./SchoolHub.API/SchoolHub.API
