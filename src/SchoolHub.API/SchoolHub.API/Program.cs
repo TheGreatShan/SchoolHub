@@ -2,15 +2,23 @@ using SchoolHub.API.IoC;
 
 class Program
 {
+    internal static IApiModule ApiModule { get; set; } =
+        new ApiModule(GetConfiguration().GetConnectionString("DefaultConnection"));
+
+    private static IConfigurationRoot GetConfiguration()
+    {
+        var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        return configuration;
+    }
+
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        LoadDependencies(builder.Services);
 
-        builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        LoadDependencies(builder.Services);
 
         var app = builder.Build();
 
@@ -30,5 +38,5 @@ class Program
     }
 
     public static void LoadDependencies(IServiceCollection serviceCollection) =>
-        ApilocModule.Dependencies(serviceCollection);
+        ApiModule.RegisterDependencies(serviceCollection);
 }
