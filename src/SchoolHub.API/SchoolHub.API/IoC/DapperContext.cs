@@ -1,5 +1,5 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace SchoolHub.API.IoC;
 
@@ -12,5 +12,5 @@ public class DapperContext
         _connectionString = connectionString;
     }
     
-    public IDbConnection Connection => new SqlConnection(_connectionString);
+    public IDbConnection Connection => new MySqlConnection(_connectionString);
 }
