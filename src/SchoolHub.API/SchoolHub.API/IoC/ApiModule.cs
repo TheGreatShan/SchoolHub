@@ -1,4 +1,6 @@
-﻿namespace SchoolHub.API.IoC;
+﻿using SchoolHub.API.Schools;
+
+namespace SchoolHub.API.IoC;
 
 public class ApiModule : IApiModule
 {
@@ -12,6 +14,7 @@ public class ApiModule : IApiModule
     public void RegisterDependencies(IServiceCollection service)
     {
         service.AddSingleton<DapperContext>(_ => new DapperContext(_connectionString));
+        service.AddScoped<ISchoolRepository, SchoolRepository>();
         service.AddControllers();
     }
 }
