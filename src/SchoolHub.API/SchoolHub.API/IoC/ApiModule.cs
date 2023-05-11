@@ -1,4 +1,5 @@
-﻿using SchoolHub.API.Schools;
+﻿using System.Data.SqlClient;
+using SchoolHub.API.Schools;
 
 namespace SchoolHub.API.IoC;
 
@@ -13,7 +14,7 @@ public class ApiModule : IApiModule
 
     public void RegisterDependencies(IServiceCollection service)
     {
-        service.AddSingleton<DapperContext>(_ => new DapperContext(_connectionString));
+        service.AddSingleton<Func<SqlConnection>>(_ => () => new SqlConnection(_connectionString));
         service.AddScoped<ISchoolRepository, SchoolRepository>();
         service.AddControllers();
     }
