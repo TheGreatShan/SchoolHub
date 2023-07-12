@@ -5,7 +5,7 @@ namespace SchoolHub.API.IoC;
 
 public class ApiModule : IApiModule
 {
-    private static string _connectionString;
+    private static string _connectionString = null!;
 
     public ApiModule(string connectionString)
     {
