@@ -1,8 +1,7 @@
-﻿namespace SchoolHub.API.Schools
+﻿namespace SchoolHub.API.Schools;
+
+public class SchoolModel
 {
-    public class SchoolModel
-    {
-        public string Id { get; set; }
-        public string SchoolName { get; set; }
-    }
+    public string Id { get; set; }
+    public string SchoolName { get; set; }
 }
