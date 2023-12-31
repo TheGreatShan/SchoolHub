@@ -1,0 +1,27 @@
+:root {
+  --selection-color: #00A9F1;
+  --placeholder-color: #9F9F9F;
+  --green: #0EC520;
+  --orange: #ECA10F;
+  --red: #DC2727;
+  --grey: #BCBCBC;
+  font-family: system-ui;
+  font-size: 15pt;
+
+}
+
+body {
+  --primary-color: black;
+  --secondary-color: #444343;
+  background-color: white;
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--selection-color);
+}
