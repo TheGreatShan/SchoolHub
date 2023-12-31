@@ -25,3 +25,8 @@ a {
 a:hover {
   color: var(--selection-color);
 }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
