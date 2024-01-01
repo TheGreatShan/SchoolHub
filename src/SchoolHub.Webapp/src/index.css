@@ -15,9 +15,13 @@ body {
   --primary-color: black;
   --secondary-color: var(--dark-grey);
   --bg-color: white;
+}
+
+body {
   background-color: var(--bg-color);
   color: var(--primary-color);
-  margin: 50px;
+  margin: 0px;
+  height: 100vh;
 }
 
 body.dark {
@@ -35,8 +39,31 @@ a:hover {
   color: var(--selection-color);
 }
 
+h1 {
+  font-size: 0.9em;
+  font-weight: normal;
+  color: var(--secondary-color);
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 50px;
+  box-sizing: border-box;
 }
