@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import { ThemeContext } from './contexts';
+import Navbar from './components/navbar/Navbar';
 function App() {
 
 	const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: light)').matches? 'light': 'dark');
@@ -19,10 +20,11 @@ function App() {
   return (
 	<ThemeContext.Provider value={{theme, setTheme}}>
 		<BrowserRouter>
-		<Routes>
-			<Route path='/' element={<Home/>}/>
-		</Routes>
-	</BrowserRouter>
+			<Navbar/>
+			<Routes>
+				<Route path='/' element={<Home/>}/>
+			</Routes>
+		</BrowserRouter>
 	</ThemeContext.Provider>
 	
   );

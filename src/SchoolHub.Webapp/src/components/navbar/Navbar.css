@@ -2,3 +2,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.Navbar .selected {
+    color: var(--selection-color);
+    position: relative;
+}
+
+.Navbar .selected::before {
+    content: '.';
+    position: absolute;
+    bottom: -0.5em;
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+}
