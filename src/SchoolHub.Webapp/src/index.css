@@ -45,6 +45,12 @@ h1 {
   color: var(--secondary-color);
 }
 
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

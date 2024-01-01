@@ -2,7 +2,8 @@ import './AppIcon.css';
 
 interface IProps {
     hasNotification?: boolean;
-    img: string
+    img: string;
+    to: string;
 }
 
 function AppIcon(props: IProps) {
@@ -10,7 +11,7 @@ function AppIcon(props: IProps) {
     const hasNotification = props.hasNotification?? false;
 
     return (
-        <a className="AppIcon" href="https://teams.microsoft.com">
+        <a className="AppIcon" href={props.to} target='_blank'>
             <img src={props.img} width="80%"/>
             {hasNotification? <span></span>: ''}
         </a>
