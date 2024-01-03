@@ -2,8 +2,6 @@ import { useState } from 'react';
 import School from '../../components/school/School';
 import { ISchool } from '../../responses';
 import Grade from '../../components/grade/Grade';
-
-import './Grade.css';
 import Subject from '../../components/subject/Subject';
 
 interface ISchoolList {
@@ -45,9 +43,29 @@ function Grades() {
                     {
                         gradeName: 'Planimetrie',
                         weight: 1,
-                        grade: 4.5
+                        grade: 5
+                    },
+                    {
+                        gradeName: 'Funktionen',
+                        weight: 1,
+                        grade: 6
                     }
 
+                ]
+            },
+            {
+                subject: 'Französisch',
+                grades: [
+                    {
+                        gradeName: 'Unité 1',
+                        weight: 1,
+                        grade: 4.5
+                    },
+                    {
+                        gradeName: 'Présenation',
+                        weight: 0.5,
+                        grade: 3
+                    }
                 ]
             }
         ]
@@ -64,8 +82,10 @@ function Grades() {
             { !school?
                 <SchoolList setSchool={setSchool}/>
                 :
-                <div>
-                    <Subject subject={schoolResponse.subjects[0]}/>
+                <div className='flex-column' style={{gap: 20}}>
+                    {schoolResponse.subjects.map((subject) => 
+                        <Subject subject={subject}/>
+                    )}
                 </div>
             }
         </section>

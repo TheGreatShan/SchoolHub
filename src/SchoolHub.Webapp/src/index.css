@@ -80,6 +80,18 @@ select option {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.item-end {
+  justify-self: end;
+}
+
+.item-center {
+  justify-self: center;
+}
+
+.item-start {
+  justify-self: start;
+}
+
 #root {
   display: flex;
   flex-direction: column;

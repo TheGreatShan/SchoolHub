@@ -1,4 +1,10 @@
+.Subject {
+    margin-top: 20px;
+}
 
+.Subject .Grade {
+    justify-self: end;
+}
 
 .Subject h2 {
     font-size: inherit;
