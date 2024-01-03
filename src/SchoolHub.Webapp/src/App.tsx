@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
 import { ThemeContext } from './contexts';
 import Navbar from './components/navbar/Navbar';
+import Grades from './pages/grades/Grades';
 function App() {
 
 	const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: light)').matches? 'light': 'dark');
@@ -23,6 +24,7 @@ function App() {
 			<Navbar/>
 			<Routes>
 				<Route path='/' element={<Home/>}/>
+				<Route path='/grades' element={<Grades/>}/>
 			</Routes>
 		</BrowserRouter>
 	</ThemeContext.Provider>
