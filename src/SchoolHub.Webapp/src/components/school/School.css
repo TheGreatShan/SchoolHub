@@ -1,0 +1,23 @@
+.School {
+    align-items: center;
+    justify-content: space-around;
+    background-color: #383838;
+    gap: 20px;
+    width: 200px;
+    height: 260px;
+    border-radius: 20px;
+}
+
+.School:hover {
+    cursor:pointer;
+}
+
+.School * {
+    text-align: center;
+}
+
+.School h2 {
+    font-size: 15pt;
+
+}
+
