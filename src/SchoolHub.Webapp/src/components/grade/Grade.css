@@ -1,0 +1,18 @@
+.Grade {
+    background-color: var(--grey);
+    padding: 0.2em 1em;
+    border-radius: 1em;
+    width: fit-content;
+}
+
+.bad {
+    background-color: var(--red);
+}
+
+.enough {
+    background-color: var(--orange);
+}
+
+.good {
+    background-color: var(--green);
+}
