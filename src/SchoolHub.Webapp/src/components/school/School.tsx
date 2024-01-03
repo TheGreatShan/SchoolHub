@@ -1,17 +1,24 @@
+import { ISchool } from '../../responses';
 import Grade from '../grade/Grade';
 import './School.css';
 
 interface IProps {
-    school:string;
-    average?:number;
+    school: ISchool
+    onClick?: (school: ISchool) => void
 }
 
-function School({school, average}: IProps) {
+function School({school, onClick}: IProps) {
+    const click = () => {
+        if(onClick) {
+            onClick(school);
+        }
+    }
+
     return (
-        <div className='School flex-column'>
-            <h2>{school}</h2>
-            <Grade grade={average}/>
-        </div>
+        <button className='School flex-column' onClick={click}>
+            <h2>{school.schoolName}</h2>
+            <Grade grade={school.averageGrade}/>
+        </button>
     );
 }
 
