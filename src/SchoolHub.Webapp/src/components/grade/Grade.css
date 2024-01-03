@@ -1,5 +1,6 @@
 .Grade {
     background-color: var(--grey);
+    color: white;
     padding: 0.2em 1em;
     border-radius: 1em;
     width: fit-content;

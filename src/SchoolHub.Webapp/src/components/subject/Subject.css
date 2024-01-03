@@ -1,0 +1,21 @@
+
+
+.Subject h2 {
+    font-size: inherit;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.Subject .add {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 20pt;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.Subject .grid-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
