@@ -4,6 +4,7 @@ import { ISchool } from '../../responses';
 import Grade from '../../components/grade/Grade';
 
 import './Grade.css';
+import Subject from '../../components/subject/Subject';
 
 interface ISchoolList {
     setSchool: React.Dispatch<React.SetStateAction<ISchool | null>>
@@ -64,6 +65,7 @@ function Grades() {
                 <SchoolList setSchool={setSchool}/>
                 :
                 <div>
+                    <Subject subject={schoolResponse.subjects[0]}/>
                 </div>
             }
         </section>
