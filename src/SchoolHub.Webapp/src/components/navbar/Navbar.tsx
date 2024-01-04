@@ -14,8 +14,8 @@ function Navbar() {
             path: '/grades'
         },
         {
-            title: 'Events',
-            path: '/events'
+            title: 'Homework',
+            path: '/homework'
         },
         {
             title: 'Profile',

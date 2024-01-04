@@ -64,7 +64,7 @@ function Grades() {
                     {
                         gradeName: 'Présenation',
                         weight: 0.5,
-                        grade: 3
+                        grade: 3.8
                     }
                 ]
             }
