@@ -16,3 +16,48 @@
     width: 100%;
     font-size: 2em;
 }
+
+.hamburger {
+    display: none;
+}
+
+body:has(.menu) {
+    overflow-y: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menu {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .Navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: var(--padding);
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        z-index: 10000;
+
+    }
+}
